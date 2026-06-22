@@ -1,6 +1,7 @@
 import { AnimatedRoot } from "@/components/layout/AnimatedRoot";
 import { Nav } from "@/components/layout/Nav";
 import { Hero } from "@/components/home/Hero";
+import { BentoGallery } from "@/components/home/BentoGallery";
 import { About } from "@/components/about/About";
 import { Projects } from "@/components/projects/Projects";
 import { Skills } from "@/components/skills/Skills";
@@ -12,6 +13,7 @@ export default function Home() {
     <AnimatedRoot>
       <Nav />
       <Hero />
+      <BentoGallery />
       <About />
       <Projects />
       <Skills />

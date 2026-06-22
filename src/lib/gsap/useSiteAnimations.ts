@@ -3,9 +3,10 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Flip } from "gsap/Flip";
 import type { RefObject } from "react";
 
-gsap.registerPlugin(ScrollTrigger, useGSAP);
+gsap.registerPlugin(ScrollTrigger, Flip, useGSAP);
 
 /**
  * Porta la lógica de `initGSAP()` del prototipo:
@@ -59,6 +60,53 @@ export function useSiteAnimations(scope: RefObject<HTMLElement | null>) {
           });
         });
       });
+
+      // Bento gallery scrubbed (Hero): port 1:1 del demo de GSAP/Flip
+      // https://codepen.io/GreenSock/pen/VwPpqyL. La grid bento colapsa a
+      // filas a pantalla completa vía Flip mientras la sección queda
+      // pineada y el scroll controla el progreso (scrub).
+      const bentoWrap = root.querySelector<HTMLElement>("[data-bento-wrap]");
+      const bentoGallery = root.querySelector<HTMLElement>("[data-bento-gallery]");
+      let bentoCleanup: (() => void) | undefined;
+
+      if (bentoWrap && bentoGallery) {
+        const bentoItems = bentoGallery.querySelectorAll<HTMLElement>(".bento-gallery__item");
+        let flipCtx: ReturnType<typeof gsap.context> | null = null;
+
+        const createBentoTween = () => {
+          flipCtx?.revert();
+          bentoGallery.classList.remove("bento-gallery--final");
+
+          flipCtx = gsap.context(() => {
+            // Activamos temporalmente el estado final para capturarlo con Flip.
+            bentoGallery.classList.add("bento-gallery--final");
+            const flipState = Flip.getState(bentoItems);
+            bentoGallery.classList.remove("bento-gallery--final");
+
+            const flip = Flip.to(flipState, { simple: true, ease: "expoScale(1, 5)" });
+
+            const tl = gsap.timeline({
+              scrollTrigger: {
+                trigger: bentoGallery,
+                start: "center center",
+                end: "+=100%",
+                scrub: true,
+                pin: bentoWrap,
+              },
+            });
+            tl.add(flip);
+
+            return () => gsap.set(bentoItems, { clearProps: "all" });
+          });
+        };
+
+        createBentoTween();
+        window.addEventListener("resize", createBentoTween);
+        bentoCleanup = () => {
+          window.removeEventListener("resize", createBentoTween);
+          flipCtx?.revert();
+        };
+      }
 
       // Scroll horizontal con pin (se mantiene siempre para conservar el layout).
       const pin = root.querySelector<HTMLElement>("[data-projwrap]");
@@ -196,6 +244,7 @@ export function useSiteAnimations(scope: RefObject<HTMLElement | null>) {
       return () => {
         window.clearTimeout(refreshTimer);
         window.removeEventListener("load", onLoad);
+        bentoCleanup?.();
         mm.revert();
         mm2.revert();
       };

@@ -10,11 +10,11 @@
   },
   "hero": {
     "kicker": "( Available for projects )",
-    "titleTop": "Full-Stack",
-    "titleBottom": "Developer",
-    "intro": "I design and build web products end to end — interfaces, APIs and the infrastructure that holds them together.",
+    "titleTop": "Developer",
+    "titleBottom": "Full-Stack",
+    "intro": "I design and build full-stack web products. From the frontend you see to the APIs and servers running in the background.",
     "baseLabel": "Base",
-    "baseValue": "Mexico City · Remote",
+    "baseValue": "CDMX · Remote",
     "stackLabel": "Stack",
     "stackValue": "React · Node · Postgres",
     "scroll": "Scroll ↓"
@@ -23,20 +23,20 @@
     "welcome": "Type 'help' to see the available commands.",
     "inputAria": "Terminal input",
     "sectionsTitle": "Directory of C:\\portfolio",
-    "navigating": "Navigating to",
-    "notFound": "The system cannot find the section",
+    "navigating": "Going to",
+    "notFound": "I couldn't find that section",
     "usage": "Usage:",
-    "themeSet": "Theme set to",
+    "themeSet": "Theme switched to",
     "unknown": "is not recognized as a command. Type 'help'.",
     "help": {
-      "title": "Available commands:",
-      "help": "show this help",
-      "dir": "list the page sections",
-      "cd": "navigate to a section",
-      "theme": "change the theme",
-      "lang": "change the language",
-      "whoami": "show who I am",
-      "cls": "clear the terminal"
+      "title": "Here's what you can type:",
+      "help": "shows this help",
+      "dir": "lists the page sections",
+      "cd": "navigates to a section",
+      "theme": "switches the theme",
+      "lang": "switches the language",
+      "whoami": "shows who I am",
+      "cls": "clears the terminal"
     },
     "section": {
       "top": "Home",
@@ -49,10 +49,10 @@
   },
   "about": {
     "kicker": "(01) About",
-    "heading": "Five years turning fuzzy ideas into products people use every day — with clean code and a healthy obsession for detail.",
-    "p1": "I started as a curious frontend developer and ended up in love with the whole stack. Today I'm just as comfortable modeling a database as I am tuning an animation to 60fps. I care about the small things: empty states, microcopy, milliseconds.",
-    "p2": "When I'm not coding, I'm probably taking apart some digital product to understand how it's built.",
-    "portrait": "[ developer portrait / photo ]",
+    "heading": "Five years shaping fuzzy ideas into products people use daily. Clean code and a (healthy) obsession with the small stuff.",
+    "p1": "I started in frontend out of curiosity, but got hooked on the whole stack. Today I'm just as comfortable modeling a database as I am tweaking a 60fps animation. It's the little things that make the difference: a well-handled empty state, microcopy that helps, those milliseconds you can actually feel.",
+    "p2": "When I'm not coding, I'm probably taking some app apart to see how it works inside.",
+    "portrait": "[ portrait / developer photo ]",
     "stats": {
       "yearsValue": "5+",
       "yearsLabel": "Years",
@@ -66,16 +66,19 @@
     "kicker": "(02) Projects",
     "titleTop": "Selected",
     "titleBottom": "work",
-    "intro": "Four cases that capture how I think, design and build. Scroll to walk through them →",
+    "intro": "Four projects that show how I think, design, and build. Scroll to check them out →",
     "indexNote": "01 — 04 · horizontal scroll",
     "mockupPrefix": "mockup —",
     "closingHeadingTop": "Want to see",
-    "closingHeadingBottom": "more cases?",
-    "closingCta": "Get in touch →"
+    "closingHeadingBottom": "more projects?",
+    "closingCta": "Hit me up →"
+  },
+  "gallery": {
+    "label": "Work gallery"
   },
   "skills": {
     "kicker": "(03) Skills",
-    "heading": "The tools I build with.",
+    "heading": "My toolbox.",
     "groups": {
       "frontend": "Frontend",
       "backend": "Backend",
@@ -94,7 +97,7 @@
     "email": "l_andre_tm@hotmail.com",
     "footer": {
       "copy": "© 2026 Luis Andre",
-      "location": "Mexico City · 19.43°N, 99.13°W"
+      "location": "CDMX · 19.43°N, 99.13°W"
     }
   }
 }

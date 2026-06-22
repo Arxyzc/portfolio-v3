@@ -25,7 +25,7 @@ export function About() {
       <div>
         <div
           data-reveal
-          className="mb-10 font-mono text-[12px] uppercase tracking-[0.12em] text-accent"
+          className="mb-20 font-mono text-[12px] uppercase tracking-[0.12em] text-accent"
         >
           {t("about.kicker")}
         </div>
