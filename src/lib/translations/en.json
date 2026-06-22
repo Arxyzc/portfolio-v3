@@ -1,0 +1,100 @@
+{
+  "nav": {
+    "logoSuffix": "®",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "experience": "Experience",
+    "contact": "Contact",
+    "themeAria": "Toggle theme"
+  },
+  "hero": {
+    "kicker": "( Available for projects )",
+    "titleTop": "Full-Stack",
+    "titleBottom": "Developer",
+    "intro": "I design and build web products end to end — interfaces, APIs and the infrastructure that holds them together.",
+    "baseLabel": "Base",
+    "baseValue": "Mexico City · Remote",
+    "stackLabel": "Stack",
+    "stackValue": "React · Node · Postgres",
+    "scroll": "Scroll ↓"
+  },
+  "terminal": {
+    "welcome": "Type 'help' to see the available commands.",
+    "inputAria": "Terminal input",
+    "sectionsTitle": "Directory of C:\\portfolio",
+    "navigating": "Navigating to",
+    "notFound": "The system cannot find the section",
+    "usage": "Usage:",
+    "themeSet": "Theme set to",
+    "unknown": "is not recognized as a command. Type 'help'.",
+    "help": {
+      "title": "Available commands:",
+      "help": "show this help",
+      "dir": "list the page sections",
+      "cd": "navigate to a section",
+      "theme": "change the theme",
+      "lang": "change the language",
+      "whoami": "show who I am",
+      "cls": "clear the terminal"
+    },
+    "section": {
+      "top": "Home",
+      "sobre": "About",
+      "proyectos": "Projects",
+      "habilidades": "Skills",
+      "experiencia": "Experience",
+      "contacto": "Contact"
+    }
+  },
+  "about": {
+    "kicker": "(01) About",
+    "heading": "Five years turning fuzzy ideas into products people use every day — with clean code and a healthy obsession for detail.",
+    "p1": "I started as a curious frontend developer and ended up in love with the whole stack. Today I'm just as comfortable modeling a database as I am tuning an animation to 60fps. I care about the small things: empty states, microcopy, milliseconds.",
+    "p2": "When I'm not coding, I'm probably taking apart some digital product to understand how it's built.",
+    "portrait": "[ developer portrait / photo ]",
+    "stats": {
+      "yearsValue": "5+",
+      "yearsLabel": "Years",
+      "projectsValue": "40+",
+      "projectsLabel": "Projects",
+      "clientsValue": "12",
+      "clientsLabel": "Clients"
+    }
+  },
+  "projects": {
+    "kicker": "(02) Projects",
+    "titleTop": "Selected",
+    "titleBottom": "work",
+    "intro": "Four cases that capture how I think, design and build. Scroll to walk through them →",
+    "indexNote": "01 — 04 · horizontal scroll",
+    "mockupPrefix": "mockup —",
+    "closingHeadingTop": "Want to see",
+    "closingHeadingBottom": "more cases?",
+    "closingCta": "Get in touch →"
+  },
+  "skills": {
+    "kicker": "(03) Skills",
+    "heading": "The tools I build with.",
+    "groups": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Tools"
+    }
+  },
+  "experience": {
+    "kicker": "(04) Experience",
+    "heading": "A timeline.",
+    "present": "Present"
+  },
+  "contact": {
+    "kicker": "(05) Contact",
+    "headingTop": "Let's build",
+    "headingBottom": "something together.",
+    "email": "l_andre_tm@hotmail.com",
+    "footer": {
+      "copy": "© 2026 Luis Andre",
+      "location": "Mexico City · 19.43°N, 99.13°W"
+    }
+  }
+}

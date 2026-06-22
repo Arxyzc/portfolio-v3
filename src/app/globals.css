@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+/* ===== Design tokens — Tema oscuro (por defecto) ===== */
+:root {
+  --bg: #0a0a0b;
+  --surface: #141417;
+  --fg: #fafafa;
+  --muted: #8a8a8f;
+  --faint: #5a5a60;
+  --line: rgba(255, 255, 255, 0.1);
+  --accent: oklch(0.68 0.2 285);
+  --available: oklch(0.74 0.17 150);
+}
+
+/* ===== Tema claro ===== */
+html[data-theme="light"] {
+  --bg: #f4f3ef;
+  --surface: #ffffff;
+  --fg: #15130f;
+  --muted: #6b665d;
+  --faint: #a8a39a;
+  --line: rgba(0, 0, 0, 0.13);
+  --accent: oklch(0.5 0.22 285);
+}
+
+/* ===== Mapear tokens a utilidades de Tailwind v4 ===== */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-available: var(--available);
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-display);
+  overflow-x: hidden;
+  transition: background 0.5s ease, color 0.5s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: oklch(0.66 0.2 285);
+  color: #fff;
+}
+
+/* ===== Subrayado animado de los links del nav ===== */
+.navlink {
+  position: relative;
+}
+.navlink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 1px;
+  width: 0;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+.navlink:hover::after {
+  width: 100%;
+}
+
+/* ===== Flecha de las tarjetas de proyecto ===== */
+.pcard:hover .parrow {
+  transform: translateX(6px);
+}
+
+/* ===== CTAs que cambian a color de acento en hover ===== */
+.scta {
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+.scta:hover {
+  color: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
+/* ===== Lateral pin indicator (Habilidades) ===== */
+.skill-list-item.is-active {
+  color: var(--accent);
+}
+
+/* Estado inicial antes de que GSAP tome el control (evita parpadeo):
+   solo el primer panel es visible en todos los tamaños de pantalla;
+   el color del primer item lo gobierna la clase .is-active, que el JS
+   aplica desde el montaje. */
+.skill-panel:not(:first-child) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.skill-panel-mobile:not(:first-child) {
+  opacity: 0;
+  visibility: hidden;
+}

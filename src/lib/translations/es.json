@@ -1,0 +1,100 @@
+{
+  "nav": {
+    "logoSuffix": "®",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "experience": "Experiencia",
+    "contact": "Contacto",
+    "themeAria": "Cambiar tema"
+  },
+  "hero": {
+    "kicker": "( Disponible para proyectos )",
+    "titleTop": "Desarrollador",
+    "titleBottom": "Full-Stack",
+    "intro": "Diseño y construyo productos web de punta a punta — interfaces, APIs y la infraestructura que las sostiene.",
+    "baseLabel": "Base",
+    "baseValue": "CDMX · Remoto",
+    "stackLabel": "Stack",
+    "stackValue": "React · Node · Postgres",
+    "scroll": "Scroll ↓"
+  },
+  "terminal": {
+    "welcome": "Escribe 'help' para ver los comandos disponibles.",
+    "inputAria": "Entrada de la terminal",
+    "sectionsTitle": "Directorio de C:\\portfolio",
+    "navigating": "Navegando a",
+    "notFound": "El sistema no puede encontrar la sección",
+    "usage": "Uso:",
+    "themeSet": "Tema cambiado a",
+    "unknown": "no se reconoce como un comando. Escribe 'help'.",
+    "help": {
+      "title": "Comandos disponibles:",
+      "help": "muestra esta ayuda",
+      "dir": "lista las secciones de la página",
+      "cd": "navega a una sección",
+      "theme": "cambia el tema",
+      "lang": "cambia el idioma",
+      "whoami": "muestra quién soy",
+      "cls": "limpia la terminal"
+    },
+    "section": {
+      "top": "Inicio",
+      "sobre": "Sobre mí",
+      "proyectos": "Proyectos",
+      "habilidades": "Habilidades",
+      "experiencia": "Experiencia",
+      "contacto": "Contacto"
+    }
+  },
+  "about": {
+    "kicker": "(01) Sobre mí",
+    "heading": "Cinco años convirtiendo ideas difusas en productos que la gente usa todos los días — con código limpio y una obsesión sana por el detalle.",
+    "p1": "Empecé como frontend curioso y terminé enamorado del stack completo. Hoy trabajo igual de cómodo modelando una base de datos que afinando una animación a 60fps. Me importan las cosas pequeñas: los estados vacíos, los microcopys, los milisegundos.",
+    "p2": "Cuando no estoy programando, probablemente estoy desarmando algún producto digital para entender cómo está hecho.",
+    "portrait": "[ retrato / foto del developer ]",
+    "stats": {
+      "yearsValue": "5+",
+      "yearsLabel": "Años",
+      "projectsValue": "40+",
+      "projectsLabel": "Proyectos",
+      "clientsValue": "12",
+      "clientsLabel": "Clientes"
+    }
+  },
+  "projects": {
+    "kicker": "(02) Proyectos",
+    "titleTop": "Trabajo",
+    "titleBottom": "seleccionado",
+    "intro": "Cuatro casos que resumen cómo pienso, diseño y construyo. Desplázate para recorrerlos →",
+    "indexNote": "01 — 04 · scroll horizontal",
+    "mockupPrefix": "mockup —",
+    "closingHeadingTop": "¿Quieres ver",
+    "closingHeadingBottom": "más casos?",
+    "closingCta": "Escríbeme →"
+  },
+  "skills": {
+    "kicker": "(03) Habilidades",
+    "heading": "Las herramientas con las que construyo.",
+    "groups": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Herramientas"
+    }
+  },
+  "experience": {
+    "kicker": "(04) Experiencia",
+    "heading": "Una línea de tiempo.",
+    "present": "Presente"
+  },
+  "contact": {
+    "kicker": "(05) Contacto",
+    "headingTop": "Construyamos",
+    "headingBottom": "algo juntos.",
+    "email": "l_andre_tm@hotmail.com",
+    "footer": {
+      "copy": "© 2026 Luis Andre",
+      "location": "CDMX · 19.43°N, 99.13°W"
+    }
+  }
+}
