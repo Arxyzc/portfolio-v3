@@ -12,7 +12,7 @@
     "kicker": "( Disponible para proyectos )",
     "titleTop": "Desarrollador",
     "titleBottom": "Full-Stack",
-    "intro": "Diseño y construyo productos web de punta a punta — interfaces, APIs y la infraestructura que las sostiene.",
+    "intro": "Diseño y construyo productos web completos: desde la interfaz que ves hasta las APIs y servidores que funcionan detrás.",
     "baseLabel": "Base",
     "baseValue": "CDMX · Remoto",
     "stackLabel": "Stack",
@@ -23,13 +23,13 @@
     "welcome": "Escribe 'help' para ver los comandos disponibles.",
     "inputAria": "Entrada de la terminal",
     "sectionsTitle": "Directorio de C:\\portfolio",
-    "navigating": "Navegando a",
-    "notFound": "El sistema no puede encontrar la sección",
+    "navigating": "Yendo a",
+    "notFound": "No encontré esa sección",
     "usage": "Uso:",
     "themeSet": "Tema cambiado a",
     "unknown": "no se reconoce como un comando. Escribe 'help'.",
     "help": {
-      "title": "Comandos disponibles:",
+      "title": "Esto es lo que puedes escribir:",
       "help": "muestra esta ayuda",
       "dir": "lista las secciones de la página",
       "cd": "navega a una sección",
@@ -49,9 +49,9 @@
   },
   "about": {
     "kicker": "(01) Sobre mí",
-    "heading": "Cinco años convirtiendo ideas difusas en productos que la gente usa todos los días — con código limpio y una obsesión sana por el detalle.",
-    "p1": "Empecé como frontend curioso y terminé enamorado del stack completo. Hoy trabajo igual de cómodo modelando una base de datos que afinando una animación a 60fps. Me importan las cosas pequeñas: los estados vacíos, los microcopys, los milisegundos.",
-    "p2": "Cuando no estoy programando, probablemente estoy desarmando algún producto digital para entender cómo está hecho.",
+    "heading": "Cinco años dándole forma a ideas borrosas hasta convertirlas en productos que la gente usa a diario. Código limpio y una obsesión (sana) por los detalles.",
+    "p1": "Arranqué en el frontend por pura curiosidad, pero terminé enganchado al stack completo. Hoy me da igual estar modelando una base de datos que puliendo una animación a 60fps. Los detalles pequeños son los que marcan la diferencia: un estado vacío bien tratado, un microcopy que ayuda, esos milisegundos que se notan.",
+    "p2": "Cuando no estoy codeando, seguro que estoy desarmando alguna app para ver cómo funciona por dentro.",
     "portrait": "[ retrato / foto del developer ]",
     "stats": {
       "yearsValue": "5+",
@@ -66,16 +66,19 @@
     "kicker": "(02) Proyectos",
     "titleTop": "Trabajo",
     "titleBottom": "seleccionado",
-    "intro": "Cuatro casos que resumen cómo pienso, diseño y construyo. Desplázate para recorrerlos →",
+    "intro": "Cuatro proyectos que muestran mi forma de pensar, diseñar y construir. Desliza para verlos →",
     "indexNote": "01 — 04 · scroll horizontal",
     "mockupPrefix": "mockup —",
     "closingHeadingTop": "¿Quieres ver",
-    "closingHeadingBottom": "más casos?",
+    "closingHeadingBottom": "más proyectos?",
     "closingCta": "Escríbeme →"
+  },
+  "gallery": {
+    "label": "Galería de trabajos"
   },
   "skills": {
     "kicker": "(03) Habilidades",
-    "heading": "Las herramientas con las que construyo.",
+    "heading": "Mi caja de herramientas.",
     "groups": {
       "frontend": "Frontend",
       "backend": "Backend",
@@ -89,7 +92,7 @@
   },
   "contact": {
     "kicker": "(05) Contacto",
-    "headingTop": "Construyamos",
+    "headingTop": "Hagamos",
     "headingBottom": "algo juntos.",
     "email": "l_andre_tm@hotmail.com",
     "footer": {

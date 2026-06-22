@@ -8,7 +8,6 @@ export function Footer() {
   return (
     <div className="mt-[110px] flex flex-wrap items-center justify-between gap-4 border-t border-line pt-7 font-mono text-[12px] tracking-[0.06em] text-faint">
       <span>{t("contact.footer.copy")}</span>
-      <span>{t("contact.footer.made")}</span>
       <span>{t("contact.footer.location")}</span>
     </div>
   );
