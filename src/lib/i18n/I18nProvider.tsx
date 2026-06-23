@@ -17,6 +17,8 @@ interface I18nContextValue {
   locale: Locale;
   setLocale: (locale: Locale) => void;
   t: TranslateFn;
+  /** false hasta que se confirma si hay un idioma guardado en localStorage. */
+  ready: boolean;
 }
 
 export const I18nContext = createContext<I18nContextValue | null>(null);
@@ -37,14 +39,21 @@ function resolveKey(dict: Messages, key: string): string {
 }
 
 export function I18nProvider({ children }: { children: ReactNode }) {
+  // Arranca igual que el servidor (sin acceso a localStorage) para no
+  // generar un mismatch de hidratación. El idioma guardado se aplica en un
+  // efecto justo después del montaje; `ready` le avisa a consumidores como
+  // la secuencia de boot de la Terminal que esperen ese ajuste antes de
+  // empezar a "escribir" texto, para no arrancar en el idioma equivocado.
   const [locale, setLocaleState] = useState<Locale>(defaultLocale);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     const stored = window.localStorage.getItem(STORAGE_KEY) as Locale | null;
-    if (stored && locales.includes(stored)) {
+    if (stored && locales.includes(stored) && stored !== defaultLocale) {
       setLocaleState(stored);
-      document.documentElement.lang = stored;
     }
+    document.documentElement.lang = stored ?? defaultLocale;
+    setReady(true);
   }, []);
 
   const setLocale = useCallback((next: Locale) => {
@@ -59,8 +68,8 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   );
 
   const value = useMemo<I18nContextValue>(
-    () => ({ locale, setLocale, t }),
-    [locale, setLocale, t]
+    () => ({ locale, setLocale, t, ready }),
+    [locale, setLocale, t, ready]
   );
 
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;

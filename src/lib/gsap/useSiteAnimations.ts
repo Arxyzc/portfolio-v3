@@ -23,16 +23,6 @@ export function useSiteAnimations(scope: RefObject<HTMLElement | null>) {
 
       // Movimiento decorativo: solo si el usuario no pidió "reduce motion".
       mm.add("(prefers-reduced-motion: no-preference)", () => {
-        // Entrada del hero
-        gsap.from(root.querySelectorAll("[data-hero]"), {
-          y: 64,
-          opacity: 0,
-          duration: 1.1,
-          ease: "power3.out",
-          stagger: 0.12,
-          delay: 0.15,
-        });
-
         // Reveals por sección
         root.querySelectorAll<HTMLElement>("[data-reveal]").forEach((el) => {
           gsap.from(el, {

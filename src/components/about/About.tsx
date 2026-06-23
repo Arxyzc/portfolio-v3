@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslation } from "@/lib/i18n/useTranslation";
+import { projects } from "@/data/projects";
 
 function Stat({ value, label }: { value: string; label: string }) {
   return (
@@ -67,12 +68,12 @@ export function About() {
             label={t("about.stats.yearsLabel")}
           />
           <Stat
-            value={t("about.stats.projectsValue")}
+            value={`${projects.length}+`}
             label={t("about.stats.projectsLabel")}
           />
           <Stat
-            value={t("about.stats.clientsValue")}
-            label={t("about.stats.clientsLabel")}
+            value={t("about.stats.availabilityValue")}
+            label={t("about.stats.availabilityLabel")}
           />
         </div>
       </div>
