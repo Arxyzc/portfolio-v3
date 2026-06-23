@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "favicon": "node scripts/generate-favicon.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -26,6 +27,8 @@
     "@types/react-dom": "^19.1.6",
     "eslint": "^9.29.0",
     "eslint-config-next": "^15.3.4",
+    "png-to-ico": "^3.0.1",
+    "sharp": "^0.35.2",
     "tailwindcss": "^4.1.10",
     "typescript": "^5.8.3"
   },

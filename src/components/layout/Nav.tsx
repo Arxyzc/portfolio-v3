@@ -24,8 +24,8 @@ export function Nav() {
       style={{ background: "color-mix(in srgb, var(--bg) 72%, transparent)" }}
     >
       <div className="flex items-center justify-between px-11 py-[22px]">
-        <a href="#top" className="font-mono text-[13px] tracking-[0.16em] text-fg no-underline">
-          LUIS ANDRE
+        <a href="#top" className="font-mono text-[13px] uppercase tracking-[0.16em] text-fg no-underline">
+          Andre Tiburcio
           <span className="text-accent">{t("nav.logoSuffix")}</span>
         </a>
 

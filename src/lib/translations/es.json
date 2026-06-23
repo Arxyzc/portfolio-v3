@@ -51,7 +51,7 @@
     },
     "boot": {
       "cmd1": "whoami",
-      "out1": "Luis Andre — Full-Stack Developer",
+      "out1": "Andre Tiburcio — Full-Stack Developer",
       "cmd2": "render ./Kicker",
       "out2": "[OK] Disponibilidad lista",
       "cmd3": "render ./Titulo",
@@ -72,8 +72,8 @@
       "yearsValue": "5+",
       "yearsLabel": "Años",
       "projectsLabel": "Proyectos",
-      "availabilityValue": "100%",
-      "availabilityLabel": "Remoto"
+      "availabilityValue": "Sí",
+      "availabilityLabel": "Disponible"
     }
   },
   "projects": {
@@ -137,7 +137,7 @@
     "email": "l_andre_tm@hotmail.com",
     "downloadCv": "Descargar CV ↓",
     "footer": {
-      "copy": "© 2026 Luis Andre"
+      "copy": "© 2026 Andre Tiburcio"
     }
   }
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslation } from "@/lib/i18n/useTranslation";
 import { projects } from "@/data/projects";
 
@@ -33,13 +34,23 @@ export function About() {
         <div
           data-reveal
           data-parallax="0.12"
-          className="flex h-[420px] items-end rounded-[2px] border border-line p-[22px] font-mono text-[11px] tracking-[0.1em] text-faint"
-          style={{
-            background:
-              "repeating-linear-gradient(45deg, var(--surface), var(--surface) 11px, var(--bg) 11px, var(--bg) 22px)",
-          }}
+          className="group relative mx-auto w-fit max-w-full p-3"
         >
-          {t("about.portrait")}
+          <span className="pointer-events-none absolute left-0 top-0 h-5 w-5 border-l border-t border-accent transition-all duration-500 group-hover:h-6 group-hover:w-6" />
+          <span className="pointer-events-none absolute right-0 top-0 h-5 w-5 border-r border-t border-accent transition-all duration-500 group-hover:h-6 group-hover:w-6" />
+          <span className="pointer-events-none absolute bottom-0 left-0 h-5 w-5 border-b border-l border-accent transition-all duration-500 group-hover:h-6 group-hover:w-6" />
+          <span className="pointer-events-none absolute bottom-0 right-0 h-5 w-5 border-b border-r border-accent transition-all duration-500 group-hover:h-6 group-hover:w-6" />
+
+          <div className="overflow-hidden rounded-[2px] border border-line transition-colors duration-500 group-hover:border-accent/60">
+            <Image
+              src="/profile.jpeg"
+              alt={t("about.portrait")}
+              width={720}
+              height={1133}
+              className="block h-auto max-h-[560px] w-auto max-w-full grayscale-[55%] contrast-[1.05] transition-all duration-700 ease-out group-hover:scale-[1.04] group-hover:grayscale-0"
+              sizes="420px"
+            />
+          </div>
         </div>
       </div>
 
