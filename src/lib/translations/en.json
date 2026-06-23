@@ -6,7 +6,9 @@
     "skills": "Skills",
     "experience": "Experience",
     "contact": "Contact",
-    "themeAria": "Toggle theme"
+    "themeAria": "Toggle theme",
+    "langAria": "Switch language",
+    "menuAria": "Open menu"
   },
   "hero": {
     "kicker": "( Available for projects )",
@@ -20,6 +22,7 @@
     "scroll": "Scroll ↓"
   },
   "terminal": {
+    "windowTitle": "Terminal",
     "welcome": "Type 'help' to see the available commands.",
     "inputAria": "Terminal input",
     "sectionsTitle": "Directory of C:\\portfolio",
@@ -45,6 +48,18 @@
       "habilidades": "Skills",
       "experiencia": "Experience",
       "contacto": "Contact"
+    },
+    "boot": {
+      "cmd1": "whoami",
+      "out1": "Luis Andre — Full-Stack Developer",
+      "cmd2": "render ./Kicker",
+      "out2": "[OK] Availability tag ready",
+      "cmd3": "render ./Title",
+      "out3": "[OK] Heading ready",
+      "cmd4": "render ./Details",
+      "out4": "[OK] Stack & contact ready",
+      "cmd5": "start ./portfolio",
+      "out5": "Ready. Welcome."
     }
   },
   "about": {
@@ -56,22 +71,47 @@
     "stats": {
       "yearsValue": "5+",
       "yearsLabel": "Years",
-      "projectsValue": "40+",
       "projectsLabel": "Projects",
-      "clientsValue": "12",
-      "clientsLabel": "Clients"
+      "availabilityValue": "100%",
+      "availabilityLabel": "Remote"
     }
   },
   "projects": {
     "kicker": "(02) Projects",
     "titleTop": "Selected",
     "titleBottom": "work",
-    "intro": "Four projects that show how I think, design, and build. Scroll to check them out →",
-    "indexNote": "01 — 04 · horizontal scroll",
+    "intro": "Six projects that show how I think, design, and build. Scroll to check them out →",
+    "indexNote": "01 — 06 · horizontal scroll",
     "mockupPrefix": "mockup —",
     "closingHeadingTop": "Want to see",
     "closingHeadingBottom": "more projects?",
-    "closingCta": "Hit me up →"
+    "closingCta": "Hit me up →",
+    "items": {
+      "dynerox": {
+        "title": "Dynerox",
+        "description": "Landing page for a virtual asset trading and verification platform in Mexico. Front-end development and design."
+      },
+      "dynerox_coming_soon": {
+        "title": "Dynerox Coming Soon",
+        "description": "'Coming Soon' landing page for a cryptocurrency trading platform. This version is disabled because Dynerox's new landing page replaced that link."
+      },
+      "demo_stripe": {
+        "title": "Stripe Demo",
+        "description": "Demo of the Stripe test environment. Simulates card payments with test cards without moving real money."
+      },
+      "api_stripe": {
+        "title": "Stripe API",
+        "description": "Stripe demo API. Test payments, subscriptions, and webhooks in a sandbox environment."
+      },
+      "demo_chat": {
+        "title": "Chat Demo",
+        "description": "Front-end chat demo built with React and Vite. A modern, fast interface to explore real-time messaging features."
+      },
+      "api_demo_chat": {
+        "title": "Chat Demo API",
+        "description": "Backend API for chat built with Node.js and Socket.io. Manages users, messages, and real-time connections."
+      }
+    }
   },
   "gallery": {
     "label": "Work gallery"
@@ -95,9 +135,9 @@
     "headingTop": "Let's build",
     "headingBottom": "something together.",
     "email": "l_andre_tm@hotmail.com",
+    "downloadCv": "Download CV ↓",
     "footer": {
-      "copy": "© 2026 Luis Andre",
-      "location": "CDMX · 19.43°N, 99.13°W"
+      "copy": "© 2026 Luis Andre"
     }
   }
 }

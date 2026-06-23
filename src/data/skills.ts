@@ -28,10 +28,10 @@ export const skills: SkillGroup[] = [
     items: [
       { name: "Node.js", icon: "SiNodedotjs" },
       { name: "Express / Fastify", icon: "SiExpress" },
-      { name: "tRPC", icon: "SiTrpc" },
-      { name: "GraphQL", icon: "SiGraphql" },
       { name: "PostgreSQL", icon: "SiPostgresql" },
-      { name: "Redis", icon: "SiRedis" },
+      { name: "Python", icon: "SiPython" },
+      { name: "MySQL", icon: "SiMysql" },
+      { name: "Next.js", icon: "SiNextdotjs" },
     ],
   },
   {

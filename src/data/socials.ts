@@ -4,8 +4,9 @@ export interface SocialLink {
 }
 
 export const socials: SocialLink[] = [
-  { label: "GitHub ↗", href: "#" },
-  { label: "LinkedIn ↗", href: "#" },
-  { label: "X / Twitter ↗", href: "#" },
-  { label: "Read.cv ↗", href: "#" },
+  { label: "GitHub ↗", href: "https://github.com/Arxyzc" },
+  {
+    label: "LinkedIn ↗",
+    href: "https://www.linkedin.com/in/luis-andr%C3%A9-tiburcio-melchor-695136312",
+  },
 ];

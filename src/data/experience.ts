@@ -5,51 +5,54 @@ export interface ExperienceEntry {
   /** null = puesto actual (se muestra "Presente" / "Present"). */
   end: string | null;
   current?: boolean;
-  role: string;
+  role: Record<Locale, string>;
   company: string;
   description: Record<Locale, string>;
+  technologies?: string[];
 }
 
 export const experience: ExperienceEntry[] = [
   {
-    start: "2023",
+    start: "2025",
     end: null,
     current: true,
-    role: "Senior Full-Stack Developer",
-    company: "Vela Studio",
-    description: {
-      es: "Lidero el desarrollo de producto de extremo a extremo, defino arquitectura y mentoreo a un equipo de cuatro developers. Dueño técnico de tres productos en producción.",
-      en: "I lead end-to-end product development, define architecture and mentor a team of four developers. Technical owner of three products in production.",
+    role: {
+      es: "Desarrollador Frontend",
+      en: "Frontend Developer",
     },
+    company: "Dynerox",
+    description: {
+      es: "Participé en el desarrollo y diseño del Front End de una plataforma web para la compra y venta de criptomonedas, así como de sus páginas y secciones complementarias, contribuyendo a la construcción de una interfaz de usuario coherente y funcional.",
+      en: "I participated in the front-end development and design of a web platform for buying and selling cryptocurrencies, as well as its accompanying pages and sections, contributing to the construction of a cohesive and functional user interface.",
+    },
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
   },
   {
-    start: "2021",
-    end: "2023",
-    role: "Full-Stack Developer",
-    company: "Northwind Labs",
-    description: {
-      es: "Construí features de cero a producción para clientes enterprise. Introduje testing automatizado y bajé los bugs en producción un 45%.",
-      en: "Built features from zero to production for enterprise clients. Introduced automated testing and cut production bugs by 45%.",
+    start: "2020",
+    end: "2025",
+    role: {
+      es: "Desarrollador Web",
+      en: "Web Developer",
     },
-  },
-  {
-    start: "2019",
-    end: "2021",
-    role: "Frontend Developer",
-    company: "Beacon Digital",
+    company: "Freelance",
     description: {
-      es: "Desarrollé interfaces para marcas de consumo, con foco en accesibilidad y animación. Aquí me obsesioné con el detalle de la interacción.",
-      en: "Developed interfaces for consumer brands, focused on accessibility and animation. This is where I got obsessed with interaction detail.",
+      es: "Desarrollé sitios web y aplicaciones para pequeñas y medianas empresas.",
+      en: "Developed websites and applications for small and medium businesses.",
     },
+    technologies: ["HTML", "CSS", "JavaScript", "React", "Next.js"],
   },
   {
     start: "2018",
     end: "2019",
-    role: "Junior Developer · Freelance",
-    company: "Independiente",
-    description: {
-      es: "Mis primeros sitios para clientes reales. Aprendí a hablar con personas no técnicas y a entregar a tiempo.",
-      en: "My first sites for real clients. I learned to talk with non-technical people and to ship on time.",
+    role: {
+      es: "Desarrollador de Software (VR y Aplicaciones Móviles)",
+      en: "Software Developer (VR and Mobile Applications)",
     },
+    company: "Mente Fresca",
+    description: {
+      es: "Participé en el desarrollo de software enfocado en Realidad Virtual y aplicaciones móviles, colaborando en la creación de aplicaciones de realidad aumentada y en la implementación de experiencias interactivas con tecnologías inmersivas.",
+      en: "I participated in software development focused on Virtual Reality and mobile applications, collaborating on the creation of augmented reality applications and the implementation of interactive experiences with immersive technologies.",
+    },
+    technologies: ["JavaScript", "Unity", "Vuforia"],
   },
 ];

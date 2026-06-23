@@ -6,7 +6,9 @@
     "skills": "Habilidades",
     "experience": "Experiencia",
     "contact": "Contacto",
-    "themeAria": "Cambiar tema"
+    "themeAria": "Cambiar tema",
+    "langAria": "Cambiar idioma",
+    "menuAria": "Abrir menú"
   },
   "hero": {
     "kicker": "( Disponible para proyectos )",
@@ -20,6 +22,7 @@
     "scroll": "Scroll ↓"
   },
   "terminal": {
+    "windowTitle": "Terminal",
     "welcome": "Escribe 'help' para ver los comandos disponibles.",
     "inputAria": "Entrada de la terminal",
     "sectionsTitle": "Directorio de C:\\portfolio",
@@ -45,6 +48,18 @@
       "habilidades": "Habilidades",
       "experiencia": "Experiencia",
       "contacto": "Contacto"
+    },
+    "boot": {
+      "cmd1": "whoami",
+      "out1": "Luis Andre — Full-Stack Developer",
+      "cmd2": "render ./Kicker",
+      "out2": "[OK] Disponibilidad lista",
+      "cmd3": "render ./Titulo",
+      "out3": "[OK] Encabezado listo",
+      "cmd4": "render ./Detalles",
+      "out4": "[OK] Stack y contacto listos",
+      "cmd5": "iniciar ./portfolio",
+      "out5": "Listo. Bienvenido."
     }
   },
   "about": {
@@ -56,22 +71,47 @@
     "stats": {
       "yearsValue": "5+",
       "yearsLabel": "Años",
-      "projectsValue": "40+",
       "projectsLabel": "Proyectos",
-      "clientsValue": "12",
-      "clientsLabel": "Clientes"
+      "availabilityValue": "100%",
+      "availabilityLabel": "Remoto"
     }
   },
   "projects": {
     "kicker": "(02) Proyectos",
     "titleTop": "Trabajo",
     "titleBottom": "seleccionado",
-    "intro": "Cuatro proyectos que muestran mi forma de pensar, diseñar y construir. Desliza para verlos →",
-    "indexNote": "01 — 04 · scroll horizontal",
+    "intro": "Seis proyectos que muestran mi forma de pensar, diseñar y construir. Desliza para verlos →",
+    "indexNote": "01 — 06 · scroll horizontal",
     "mockupPrefix": "mockup —",
     "closingHeadingTop": "¿Quieres ver",
     "closingHeadingBottom": "más proyectos?",
-    "closingCta": "Escríbeme →"
+    "closingCta": "Escríbeme →",
+    "items": {
+      "dynerox": {
+        "title": "Dynerox",
+        "description": "Landing page para plataforma de compra, venta y verificación de activos virtuales en México. Desarrollo y diseño Front End."
+      },
+      "dynerox_coming_soon": {
+        "title": "Dynerox próximamente",
+        "description": "Landing page 'Próximamente' para plataforma de compra y venta de criptomonedas. Esta versión está desactivada porque la nueva landing page de Dynerox reemplazó ese enlace."
+      },
+      "demo_stripe": {
+        "title": "Demo Stripe",
+        "description": "Demo del entorno de pruebas de Stripe. Simula pagos con tarjetas de prueba sin mover dinero real."
+      },
+      "api_stripe": {
+        "title": "API Stripe",
+        "description": "API demo de Stripe. Prueba pagos, suscripciones y webhooks en entorno de pruebas."
+      },
+      "demo_chat": {
+        "title": "Demo Chat",
+        "description": "Demo de chat frontend construido con React y Vite. Interfaz moderna y rápida para explorar funcionalidades de mensajería en tiempo real."
+      },
+      "api_demo_chat": {
+        "title": "API Demo Chat",
+        "description": "API backend para chat con Node.js y Socket.io. Gestiona usuarios, mensajes y conexiones en tiempo real."
+      }
+    }
   },
   "gallery": {
     "label": "Galería de trabajos"
@@ -95,9 +135,9 @@
     "headingTop": "Hagamos",
     "headingBottom": "algo juntos.",
     "email": "l_andre_tm@hotmail.com",
+    "downloadCv": "Descargar CV ↓",
     "footer": {
-      "copy": "© 2026 Luis Andre",
-      "location": "CDMX · 19.43°N, 99.13°W"
+      "copy": "© 2026 Luis Andre"
     }
   }
 }

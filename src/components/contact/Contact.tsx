@@ -4,6 +4,8 @@ import { useTranslation } from "@/lib/i18n/useTranslation";
 import { Footer } from "@/components/layout/Footer";
 import { socials } from "@/data/socials";
 
+const CV_HREF = "/Andre%20Tiburcio%20CV.pdf";
+
 export function Contact() {
   const { t } = useTranslation();
 
@@ -43,11 +45,20 @@ export function Contact() {
           <a
             key={s.label}
             href={s.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="scta rounded-[40px] border border-line px-6 py-3 text-muted no-underline"
           >
             {s.label}
           </a>
         ))}
+        <a
+          href={CV_HREF}
+          download
+          className="scta rounded-[40px] border border-line px-6 py-3 text-muted no-underline"
+        >
+          {t("contact.downloadCv")}
+        </a>
       </div>
 
       <Footer />

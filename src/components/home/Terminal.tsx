@@ -50,8 +50,14 @@ function gotoSection(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-export function Terminal() {
-  const { t, locale, setLocale } = useTranslation();
+interface TerminalProps {
+  autoBoot?: boolean;
+  onBootStep?: (step: number) => void;
+  onBootComplete?: () => void;
+}
+
+export function Terminal({ autoBoot = false, onBootStep, onBootComplete }: TerminalProps) {
+  const { t, locale, setLocale, ready } = useTranslation();
   const { theme, setTheme } = useTheme();
 
   const [lines, setLines] = useState<Line[]>([]);
@@ -59,17 +65,98 @@ export function Terminal() {
   const [cwd, setCwd] = useState("");
   const [history, setHistory] = useState<string[]>([]);
   const [histIdx, setHistIdx] = useState<number | null>(null);
+  const [booting, setBooting] = useState(autoBoot);
 
   const bodyRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const prompt = `${PROMPT_BASE}${cwd ? "\\" + cwd : ""}>`;
 
-  // Mensaje de bienvenida (una vez).
+  // Mensaje de bienvenida (una vez), salvo que arranquemos con la secuencia de boot.
   useEffect(() => {
+    if (autoBoot || !ready) return;
     setLines([{ kind: "system", text: t("terminal.welcome") }]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [ready]);
+
+  // Secuencia de boot automática: "escribe" y "ejecuta" un par de comandos
+  // antes de entregarle el control al usuario. Espera a `ready` para no
+  // arrancar con el idioma por defecto si el usuario tenía otro guardado.
+  useEffect(() => {
+    if (!autoBoot || !ready) return;
+    let cancelled = false;
+
+    const wait = (ms: number) =>
+      new Promise<void>((resolve) => {
+        window.setTimeout(resolve, ms);
+      });
+
+    async function typeText(text: string, speed = 32) {
+      for (let i = 0; i <= text.length; i++) {
+        if (cancelled) return;
+        setValue(text.slice(0, i));
+        await wait(speed);
+      }
+    }
+
+    async function runBoot() {
+      // Cada paso "programa" una parte del hero: en cuanto se imprime su
+      // salida, `onBootStep` le avisa a Hero que revele esa sección.
+      const steps: { cmd: string; outputs: Line[]; revealStep?: number }[] = [
+        {
+          cmd: t("terminal.boot.cmd1"),
+          outputs: [{ kind: "output", text: t("terminal.boot.out1") }],
+        },
+        {
+          cmd: t("terminal.boot.cmd2"),
+          outputs: [{ kind: "success", text: t("terminal.boot.out2") }],
+          revealStep: 0,
+        },
+        {
+          cmd: t("terminal.boot.cmd3"),
+          outputs: [{ kind: "success", text: t("terminal.boot.out3") }],
+          revealStep: 1,
+        },
+        {
+          cmd: t("terminal.boot.cmd4"),
+          outputs: [{ kind: "success", text: t("terminal.boot.out4") }],
+          revealStep: 2,
+        },
+        {
+          cmd: t("terminal.boot.cmd5"),
+          outputs: [{ kind: "system", text: t("terminal.boot.out5") }],
+        },
+      ];
+
+      await wait(500);
+      for (const step of steps) {
+        if (cancelled) return;
+        await typeText(step.cmd);
+        if (cancelled) return;
+        await wait(280);
+        setLines((prev) => [...prev, { kind: "input", text: `${prompt} ${step.cmd}` }]);
+        setValue("");
+        for (const line of step.outputs) {
+          await wait(220);
+          if (cancelled) return;
+          setLines((prev) => [...prev, line]);
+        }
+        if (step.revealStep !== undefined) onBootStep?.(step.revealStep);
+        await wait(450);
+      }
+      if (cancelled) return;
+      await wait(400);
+      setBooting(false);
+      onBootComplete?.();
+    }
+
+    runBoot();
+
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoBoot, ready]);
 
   // Auto-scroll al fondo.
   useEffect(() => {
@@ -173,7 +260,7 @@ export function Terminal() {
       }
 
       case "whoami":
-        out.push({ kind: "output", text: "Luis Andre \u2014 Full-Stack Developer" });
+        out.push({ kind: "output", text: t("terminal.boot.out1") });
         break;
 
       case "cls":
@@ -216,7 +303,6 @@ export function Terminal() {
 
   return (
     <div
-      data-hero
       onClick={() => inputRef.current?.focus()}
       className="overflow-hidden rounded-lg border border-line shadow-2xl"
       style={{ background: "#0c0c0c" }}
@@ -225,7 +311,7 @@ export function Terminal() {
       <div className="flex items-center justify-between px-3 py-2" style={{ background: "#2b2b2b" }}>
         <div className="flex items-center gap-2 font-mono text-[12px]" style={{ color: "#cfcfcf" }}>
           <span aria-hidden style={{ color: "#c4b5fd" }}>{">_"}</span>
-          Terminal
+          {t("terminal.windowTitle")}
         </div>
         <div className="flex items-center gap-3 text-[12px]" style={{ color: "#9b9b9b" }} aria-hidden>
           <span>&#9472;</span>
@@ -257,6 +343,7 @@ export function Terminal() {
             value={value}
             onChange={(e) => setValue(e.target.value)}
             onKeyDown={onKeyDown}
+            readOnly={booting}
             spellCheck={false}
             autoComplete="off"
             aria-label={t("terminal.inputAria")}

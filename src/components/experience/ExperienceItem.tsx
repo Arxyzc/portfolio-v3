@@ -26,7 +26,7 @@ export function ExperienceItem({
         </div>
         <div>
           <h3 className="m-0 mb-1 text-[28px] font-medium tracking-[-0.01em]">
-            {entry.role}
+            {entry.role[locale]}
           </h3>
           <div className="mb-3.5 font-mono text-[13px] text-accent">
             {entry.company}
@@ -34,6 +34,11 @@ export function ExperienceItem({
           <p className="m-0 max-w-[620px] text-[16px] leading-[1.65] text-muted">
             {entry.description[locale]}
           </p>
+          {entry.technologies && entry.technologies.length > 0 && (
+            <div className="mt-3.5 font-mono text-[12px] uppercase tracking-[0.06em] text-faint">
+              {entry.technologies.join(" · ")}
+            </div>
+          )}
         </div>
       </div>
     </div>
