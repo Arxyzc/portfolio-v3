@@ -50,18 +50,17 @@ export function useSiteAnimations(scope: RefObject<HTMLElement | null>) {
         });
       });
 
-      // Scroll horizontal con pin: solo en desktop/tablet (>=768px). En
-      // mobile el cambio de altura del viewport al ocultarse la barra de
-      // direcciones recalcula el pin a medio scroll y "descuadra" la
-      // sección; ahí el track se vuelve scroll horizontal nativo (ver CSS).
-      const mmProjects = gsap.matchMedia();
-      mmProjects.add("(min-width: 768px)", () => {
-        const pin = root.querySelector<HTMLElement>("[data-projwrap]");
-        const track = root.querySelector<HTMLElement>("[data-track]");
-        if (!pin || !track) return;
+      // Normaliza el scroll en touch devices: evita que el pin se
+      // "descuadre" cuando la barra de direcciones del navegador mobile
+      // aparece/desaparece a medio scroll y cambia la altura del viewport.
+      ScrollTrigger.normalizeScroll(true);
 
+      // Scroll horizontal con pin (se mantiene siempre para conservar el layout).
+      const pin = root.querySelector<HTMLElement>("[data-projwrap]");
+      const track = root.querySelector<HTMLElement>("[data-track]");
+      if (pin && track) {
         const dist = () => track.scrollWidth - window.innerWidth;
-        const trigger = gsap.to(track, {
+        gsap.to(track, {
           x: () => -dist(),
           ease: "none",
           scrollTrigger: {
@@ -74,9 +73,7 @@ export function useSiteAnimations(scope: RefObject<HTMLElement | null>) {
             anticipatePin: 1,
           },
         });
-
-        return () => trigger.scrollTrigger?.kill();
-      });
+      }
 
       // Línea de progreso de la experiencia
       const tl = root.querySelector<HTMLElement>("[data-tlprogress]");
@@ -196,7 +193,6 @@ export function useSiteAnimations(scope: RefObject<HTMLElement | null>) {
         window.removeEventListener("load", onLoad);
         mm.revert();
         mm2.revert();
-        mmProjects.revert();
       };
     },
     { scope }

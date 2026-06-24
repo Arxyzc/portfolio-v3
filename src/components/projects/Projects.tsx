@@ -9,16 +9,10 @@ export function Projects() {
 
   return (
     <section id="proyectos" className="border-t border-line">
-      <div
-        data-projwrap
-        className="relative overflow-x-auto overflow-y-hidden md:h-screen md:overflow-hidden"
-      >
-        <div
-          data-track
-          className="flex h-full snap-x snap-mandatory items-stretch md:snap-none"
-        >
+      <div data-projwrap className="relative h-screen overflow-hidden">
+        <div data-track className="flex h-full items-stretch">
           {/* Panel intro */}
-          <div className="flex w-[46vw] min-w-[420px] flex-none flex-col justify-between border-r border-line p-11 snap-start">
+          <div className="flex w-[46vw] min-w-[420px] flex-none flex-col justify-between border-r border-line p-11">
             <div className="font-mono text-[12px] uppercase tracking-[0.12em] text-accent">
               {t("projects.kicker")}
             </div>
@@ -43,7 +37,7 @@ export function Projects() {
           ))}
 
           {/* Panel de cierre */}
-          <div className="flex w-[34vw] min-w-[340px] flex-none flex-col justify-center gap-6 p-11 snap-start">
+          <div className="flex w-[34vw] min-w-[340px] flex-none flex-col justify-center gap-6 p-11">
             <h3 className="m-0 text-[clamp(34px,3.4vw,52px)] font-medium leading-none tracking-[-0.03em]">
               {t("projects.closingHeadingTop")}
               <br />
