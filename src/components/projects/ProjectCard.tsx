@@ -26,7 +26,7 @@ export function ProjectCard({ project }: { project: Project }) {
     <article
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="pcard flex w-[42vw] min-w-[480px] flex-none flex-col border-r border-line p-11"
+      className="pcard flex w-[42vw] min-w-[480px] flex-none flex-col border-r border-line p-11 snap-start"
     >
       <div className="flex justify-between font-mono text-[12px] tracking-[0.08em] text-faint">
         <span>{project.num}</span>
